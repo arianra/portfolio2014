@@ -1,0 +1,9 @@
+{
+  "name": "portfolio2014",
+  "private": true,
+  "dependencies": {
+    "jquery": "~1.11.1",
+    "skeleton-scss": "*",
+    "fullpage.js": "~2.6.2"
+  }
+}

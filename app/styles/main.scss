@@ -1,0 +1,18 @@
+// bower:scss
+@import "skeleton-scss/scss/skeleton.scss";
+// endbower
+
+$variable: #3f5a88;
+
+body {
+  background: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #3f5a88;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
