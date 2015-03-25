@@ -2,12 +2,62 @@
 @import "skeleton-scss/scss/skeleton.scss";
 // endbower
 
-$variable: #3f5a88;
+$imgDir: "../images/";
 
 body {
   background: #fafafa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #3f5a88;
+  color: black;
+}
+
+h1{
+  font-weight: 900;
+}
+
+header.rainbow {
+  display: block;
+  position: absolute;
+  bottom:0px;
+  left:0px;
+  width: 100%;
+  height: 1%;
+
+  .color-block {
+    display: block;
+    float: left;
+    height: 100%;
+  }
+}
+
+.section {
+  &.welcome {
+    background-image: url('#{$imgDir}doodle_03.png');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: top right;
+
+    color: #FFFFFF;
+    text-shadow: #00A2E5 0px 2px 0px;
+  }
+  &.skills {
+    color: #373B44;
+
+    h1{
+      color: #E8E7E7;
+      text-shadow: #A5A5A5 0px 1px 0px;
+    }
+  }
+  &.projects {
+    color: #d1d1d1;
+  }
+  &.contact {
+    background-image: url('#{$imgDir}doodle_02.png');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: top right;
+
+    color: #383838;
+  }
 }
 
 .browsehappy {
@@ -16,3 +66,43 @@ body {
   color: #000;
   padding: 0.2em 0;
 }
+
+//.pace {
+//  -webkit-pointer-events: none;
+//  pointer-events: none;
+//
+//  -webkit-user-select: none;
+//  -moz-user-select: none;
+//  user-select: none;
+//
+//  position: fixed;
+//  top: 0;
+//  left: 0;
+//  width: 100%;
+//
+//  -webkit-transform: translate3d(0, -50px, 0);
+//  -ms-transform: translate3d(0, -50px, 0);
+//  transform: translate3d(0, -50px, 0);
+//
+//  -webkit-transition: -webkit-transform .5s ease-out;
+//  -ms-transition: -webkit-transform .5s ease-out;
+//  transition: transform .5s ease-out;
+//}
+//.pace.pace-active {
+//  -webkit-transform: translate3d(0, 0, 0);
+//  -ms-transform: translate3d(0, 0, 0);
+//  transform: translate3d(0, 0, 0);
+//}
+//
+//.pace .pace-progress {
+//  display: block;
+//  position: fixed;
+//  z-index: 2000;
+//  top: 0;
+//  right: 100%;
+//  width: 100%;
+//  height: 10px;
+//  background: #df2009;
+//
+//  pointer-events: none;
+//}
