@@ -19,10 +19,24 @@
       autoScrolling: false,
       navigationTooltips: ['Hello', 'Skills', 'Projects', 'Contact'],
       anchors: ['Hello', 'Skills', 'Projects', 'Contact'],
-      sectionsColor: [ '#00B4FF', '#FFFFFF', '#444444', '#CCF390']
+      sectionsColor: [ '#00B4FF', '#FFFFFF', '#262626', '#CCF390']
     });
 
     $('.section.contact').append( this.createRainbowHeader(17) );
+
+    //list item rainbow gradient
+    var $rainbowList = $('.skills .fa-li'),
+        listRainbowColors = this.dirtyRainbow($rainbowList.length);
+
+    $rainbowList.each( function(i,v){
+      $(this).css( 'color', listRainbowColors[i] );
+    } );
+
+    $.stellar({
+      horizontalScrolling: false,
+      verticalOffset: 40
+    });
+
 
     return this;
   };

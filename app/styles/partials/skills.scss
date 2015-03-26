@@ -1,1 +1,18 @@
-c
+.section.skills{
+
+  color: $soilGrey;
+
+  h4 {
+    font-weight: 500;
+    color: $passionateRed;
+  }
+
+  p, .fa-ul{
+    line-height: 3rem;
+  }
+
+  .fa-li {
+    color: $passionateRed;
+    top: 0.75rem;
+  }
+}

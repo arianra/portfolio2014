@@ -5,6 +5,8 @@
     "pace": "~1.0.2",
     "jquery": "~1.11.1",
     "skeleton-scss": "*",
-    "fullpage.js": "~2.6.2"
+    "fullpage.js": "~2.6.2",
+    "fontawesome": "~4.3.0",
+    "stellar.js": "~0.6.2"
   }
 }
