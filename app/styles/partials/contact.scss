@@ -1,4 +1,51 @@
-.section.contacts{
+.section.contact{
+
+  input, textarea {
+    padding-left: 40px;
+    font-size: 16px;
+    color: $suaveGrey;
+
+    border: none;
+    border-radius: 0;
+  }
+
+  .button-primary {
+    background-color: $mossGreen;
+    border: none;
+    border-radius: 0;
+
+    &:hover{
+      background-color: $suaveGrey;
+
+    }
+  }
+
+  .wrapper-input-email {
+    position: relative;
+
+    &:before{
+      content:"\f0e0";
+      font-family: FontAwesome;
+      font-size: 18px;
+      position: absolute;
+      top: 5px;
+      left: 12px;
+    }
+  }
+  .wrapper-textarea-message{
+    position: relative;
+
+    &:before{
+      content:"\f040";
+      font-family: FontAwesome;
+      font-size: 18px;
+      position: absolute;
+      top: 5px;
+      left: 12px;
+    }
+  }
+
+
   background-image: url('#{$imgDir}doodle_02.png');
   background-size: auto 100%;
   background-repeat: no-repeat;

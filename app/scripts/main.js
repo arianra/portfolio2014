@@ -41,36 +41,43 @@
     return this;
   };
 
-  myPortfolio.createRainbowHeader = function(arrLen){
-    var arrayLength = arrLen || 12,
-        rainbowArray = this.dirtyRainbow(arrayLength),
-        $header = $('<header/>').addClass('rainbow');
+  myPortfolio.createRainbowHeader = function(colorAmount){
+    var cLen = colorAmount || 12,
+        rainbowArray = this.dirtyRainbow(cLen),
+        $header = $('<header/>').addClass('rainbow'),
+        i = -1;
 
-    for( var i = arrayLength; --i >= 0 ; ){
+    for( ; rainbowArray[++i] ; ){
       $('<div/>')
         .addClass('color-block')
         .css('background-color', rainbowArray[i])
-        .css('width',''+(100/arrayLength)+'%')
+        .css('width',''+(100/cLen)+'%')
         .appendTo($header);
     }
 
     return $header;
   };
 
-  myPortfolio.dirtyRainbow = function(arrayLength){
-    var arrayLength = arrayLength || 12,
+  myPortfolio.dirtyRainbow = function(rainbowLength){
+    var rLen = rainbowLength || 12,
         m = Math,
-        r = 0,
-        u = m.PI* 2,
+        u = m.PI*2,
         v = m.cos,
+        r = 0,
         colorArray = [];
 
-    for( var i = arrayLength; --i >= 0 ; ){
+    const createColor = function( amount, r, colorArray ){
+      if (!amount) {
+        return colorArray;
+      }
+
       r -= u/-50;
       colorArray.push( '#'+(v(r)*127+128<<16 | v(r+u/3)*127+128<<8 | v(r+u/3*2)*127+128).toString(16) );
-    }
 
-    return colorArray;
+      return createColor( --amount, r, colorArray );
+    };
+
+    return createColor(rLen, r, colorArray);
   };
 
   return myPortfolio.init();

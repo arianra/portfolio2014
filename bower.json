@@ -2,7 +2,6 @@
   "name": "portfolio2014",
   "private": true,
   "dependencies": {
-    "pace": "~1.0.2",
     "jquery": "~1.11.1",
     "skeleton-scss": "*",
     "fullpage.js": "~2.6.2",

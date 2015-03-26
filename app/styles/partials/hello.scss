@@ -1,6 +1,33 @@
 .section.welcome{
 
+  color: white;
+
   h3, p {
     color: $profoundPurple;
   }
+
+  h1,h2,h3 {
+    text-shadow: #00A2E5 0px 2px 0px;
+  }
+
+  .button{
+    color: white;
+    border-color: white;
+
+    &:hover {
+      color: $profoundPurple;
+      border-color: $profoundPurple
+    }
+    &:focus {
+      color: white;
+      border-color: $profoundPurple;
+    }
+  }
+
+  background-image: url('#{$imgDir}doodle_03.png');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: top right;
+
+
 }
