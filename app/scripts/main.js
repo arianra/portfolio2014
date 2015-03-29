@@ -15,18 +15,16 @@
       touchSensitivity: 25,
       scrollBar: true,
       navigation: true,
-      //scrollOverflow: true,
       autoScrolling: false,
-      navigationTooltips: ['Hello', 'Skills', 'Projects', 'Contact'],
-      anchors: ['Hello', 'Skills', 'Projects', 'Contact'],
-      sectionsColor: [ '#00B4FF', '#FFFFFF', '#262626', '#CCF390']
+      navigationTooltips: ['Hello', 'What I do', 'Projects', 'Contact'],
+      anchors: ['Hello', 'Skills', 'Projects', 'Contact']
     });
 
     $('.section.contact').append( this.createRainbowHeader(17) );
 
     //list item rainbow gradient
     var $rainbowList = $('.skills .fa-li'),
-        listRainbowColors = this.dirtyRainbow($rainbowList.length);
+        listRainbowColors = this.dirtyRainbow($rainbowList.length, 0);
 
     $rainbowList.each( function(i,v){
       $(this).css( 'color', listRainbowColors[i] );
@@ -58,15 +56,15 @@
     return $header;
   };
 
-  myPortfolio.dirtyRainbow = function(rainbowLength){
+  myPortfolio.dirtyRainbow = function(rainbowLength, r){
     var rLen = rainbowLength || 12,
+        r = r || 0,
         m = Math,
         u = m.PI*2,
         v = m.cos,
-        r = 0,
         colorArray = [];
 
-    const createColor = function( amount, r, colorArray ){
+    var createColor = function( amount, r, colorArray ){
       if (!amount) {
         return colorArray;
       }
