@@ -15,6 +15,7 @@
       touchSensitivity: 25,
       scrollBar: true,
       navigation: true,
+      fitToSection: false,
       autoScrolling: false,
       navigationTooltips: ['Hello', 'What I do', 'Projects', 'Contact'],
       anchors: ['Hello', 'Skills', 'Projects', 'Contact']
