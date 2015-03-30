@@ -36,8 +36,78 @@
       verticalOffset: 40
     });
 
+    myPortfolio.validateContactForm();
 
     return this;
+  };
+
+  myPortfolio.validateContactForm = function(){
+
+    var _self = this,
+      fields = [];
+
+    var _validateEmail = function(input){
+      var emailRegEx = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+      return emailRegEx.test( input );
+    };
+
+    var _validateRequired = function(input){
+      return input.length > 0;
+    };
+
+    fields = $.map($('.validate'), function(el){
+      var $el = $(el),
+        parameters = [];
+
+      if( $el.hasClass("validate-email") ) parameters.push({ invalid: 'email-invalid', func: _validateEmail});
+      if( $el.hasClass("validate-required") ) parameters.push({invalid: 'required-invalid' , func: _validateRequired});
+
+      $el.removeClass('validate validate-email validate-required');
+
+      if( parameters.length < 1 ) return;
+
+      return {
+        element: $el,
+        parameters: parameters,
+        firstFocus: true,
+        valid: false
+      }
+    });
+
+    $.each( fields, function(){
+      var _self = this,
+          el = _self.element,
+          v = _self.valid,
+          f = _self.firstFocus,
+          p = _self.parameters;
+
+      var quickValidation = function(){
+        v = true;
+
+        $.each( p, function(){
+          var vp = this.func(el.val());
+          v = ( !v ) ? false : vp;
+          console.log(v);
+
+          el.toggleClass(this.invalid, !vp );
+          el.toggleClass("valid", !!v );
+        })
+      };
+
+      el.focusout( function(){
+        f = false;
+
+        quickValidation();
+      });
+
+      el.on('input', function(){
+        if( f ) return;
+
+        quickValidation();
+      });
+
+    });
+
   };
 
   myPortfolio.createRainbowHeader = function(colorAmount){
