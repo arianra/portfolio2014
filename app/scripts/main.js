@@ -38,13 +38,52 @@
 
     myPortfolio.validateContactForm();
 
+    myPortfolio.contactButton = myPortfolio.contactSubmit();
+
     return this;
+  };
+
+  myPortfolio.contactSubmit = function(){
+    var _self = this;
+
+    $.extend( _self, {
+      onSubmit: function(){
+        var valid = _self.validateFields();
+
+        $('.validate').each( function(){
+          $(this).next('.validation-notification').toggleClass( 'hidden', !!$(this).hasClass('is-valid')  );
+        });
+
+        if( !valid ) {return;}
+
+      },
+      onResponse: function(){},
+      errorHandler: function(){},
+      succesHandler: function(){
+
+        $('.validate').val('').removeClass('is-valid email-invalid required-invalid');
+      },
+      validateFields: function(){
+        var fields = $('.validate'),
+            valid = true;
+
+        if( fields.length < 1 ) {return false;}
+
+        fields.each( function(){
+          if(!valid) {return;}
+          valid = ($(this).hasClass("is-valid")) ? true : false;
+        });
+
+        return valid;
+      }
+    });
+
+    $('.contact-send').click(_self.onSubmit);
   };
 
   myPortfolio.validateContactForm = function(){
 
-    var _self = this,
-      fields = [];
+    var _self = this;
 
     var _validateEmail = function(input){
       var emailRegEx = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -55,14 +94,14 @@
       return input.length > 0;
     };
 
-    fields = $.map($('.validate'), function(el){
+    var fields = $.map($('.validate'), function(el){
       var $el = $(el),
         parameters = [];
 
       if( $el.hasClass('validate-email') ) {parameters.push({ invalid: 'email-invalid', func: _validateEmail});}
       if( $el.hasClass('validate-required') ) {parameters.push({invalid: 'required-invalid' , func: _validateRequired});}
 
-      $el.removeClass('validate validate-email validate-required');
+      $el.removeClass('validate-email validate-required');
 
       if( parameters.length < 1 ) {return;}
 
@@ -87,11 +126,17 @@
         $.each( p, function(){
           var vp = this.func(el.val());
           v = ( !v ) ? false : vp;
-          console.log(v);
 
           el.toggleClass(this.invalid, !vp );
-          el.toggleClass('valid', !!v );
+          el.toggleClass('is-valid', !!v );
+
         });
+
+        if(v){
+          el.next('.validation-notification').addClass('hidden');
+        }
+
+        return v;
       };
 
       el.focusout( function(){

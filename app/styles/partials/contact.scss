@@ -13,7 +13,7 @@
       box-shadow: 0 3px 0 0 $mossGreen;
     }
 
-    &.valid {
+    &.is-valid {
       box-shadow: 0 3px 0 0 $jawsBlue;
     }
 
@@ -55,6 +55,23 @@
       position: absolute;
       top: 5px;
       left: 12px;
+    }
+  }
+
+  .validation-notification{
+
+    margin-bottom: 1.5rem;
+    padding: 0.7% 3% 0.5% 3%;
+
+    background-color: $passionateRed;
+    color: white;
+    font-weight: 400;
+
+    &.email {
+      margin-top: -1.5rem;
+    }
+    &.message {
+      margin-top: -22px;
     }
   }
 
