@@ -71,7 +71,7 @@
 
         fields.each( function(){
           if(!valid) {return;}
-          valid = ($(this).hasClass("is-valid")) ? true : false;
+          valid = ($(this).hasClass('is-valid')) ? true : false;
         });
 
         return valid;
