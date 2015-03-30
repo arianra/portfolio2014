@@ -59,19 +59,19 @@
       var $el = $(el),
         parameters = [];
 
-      if( $el.hasClass("validate-email") ) parameters.push({ invalid: 'email-invalid', func: _validateEmail});
-      if( $el.hasClass("validate-required") ) parameters.push({invalid: 'required-invalid' , func: _validateRequired});
+      if( $el.hasClass('validate-email') ) {parameters.push({ invalid: 'email-invalid', func: _validateEmail});}
+      if( $el.hasClass('validate-required') ) {parameters.push({invalid: 'required-invalid' , func: _validateRequired});}
 
       $el.removeClass('validate validate-email validate-required');
 
-      if( parameters.length < 1 ) return;
+      if( parameters.length < 1 ) {return;}
 
       return {
         element: $el,
         parameters: parameters,
         firstFocus: true,
         valid: false
-      }
+      };
     });
 
     $.each( fields, function(){
@@ -90,8 +90,8 @@
           console.log(v);
 
           el.toggleClass(this.invalid, !vp );
-          el.toggleClass("valid", !!v );
-        })
+          el.toggleClass('valid', !!v );
+        });
       };
 
       el.focusout( function(){
@@ -101,7 +101,7 @@
       });
 
       el.on('input', function(){
-        if( f ) return;
+        if( f ) { return; }
 
         quickValidation();
       });
