@@ -58,7 +58,8 @@
     _self.element = el = $el;
     _self.options = opt = $.extend( {
       speed : 200,
-      easeIn : mina.linear
+      easeIn : mina.linear,
+      easeOut: mina.linear
     }, options );
 
     _self.scene = s = Snap( el.find('svg')[0] );
@@ -66,6 +67,7 @@
     _self.initialPath = _self.path.attr('d');
 
     _self.animateInSteps = el.attr('data-in').split(';');
+    _self.animateOutSteps = el.attr('data-out').split(';');
     _self.isAnimating = false;
 
     _self.show = function(){
@@ -73,28 +75,38 @@
       if ( _self.isAnimating ) {return !1;}
       _self.isAnimating = true;
 
-      _self.runAnimation( function(){
-        _self.path.attr( 'd', _self.initialPath );
+      _self.runAnimation( true, function(){
         _self.isAnimating = false;
+
+        // todo @arian removeclass show here and maybe boolean for show state, also initialpath or endpath for hide
       });
       el.addClass('show');
 
     };
     _self.hide = function(){
+      _self.isAnimating = true;
+
+      // todo @arian perhaps stop old animation with path.stop, but shouldn't be necessary
+      // todo start with addclass show and path set to endpath of animateInSteps (last in array, ~[4])
+
+      _self.runAnimation( false, function(){
+        _self.path.attr( 'd', _self.initialPath );
+        _self.isAnimating = false;
+        el.removeClass('show');
+      });
 
     };
 
-    _self.runAnimation = function( onComplete ){
+    _self.runAnimation = function( isAnimateIn, onComplete ){
       var step = 0,
-          steps = _self.animateInSteps,
+          steps = (isAnimateIn) ? _self.animateInSteps : _self.animateOutSteps,
           stepsLength = steps.length,
           speed = opt.speed,
-          easeIn = opt.easeIn;
+          easeIn = (isAnimateIn) ? opt.easeIn : opt.easeOut;
 
       var runSteps = function(step){
         if( step === stepsLength ) {
           onComplete();
-          //_self.path.stop();
           return;
         }
 
@@ -127,17 +139,28 @@
             message: $('textarea').val()
           }
         }).done(function(data){
-          console.log(data);
+          _self.onResponse(data);
+        }).fail(function(){
+          _self.onResponse(false);
         });
-
-        //TEMPORARY
-        _self.succesHandler();
       },
-      onResponse: function(){},
-      errorHandler: function(){},
+      onResponse: function(data){
+        if(data === 1){
+          _self.succesHandler();
+        }
+        else {
+          _self.errorHandler();
+        }
+      },
+      errorHandler: function(){
+        $('.send-notification.error').show();
+      },
       succesHandler: function(){
+        $('.send-notification.success').show();
 
-        $('.validate').val('').removeClass('is-valid email-invalid required-invalid');
+        $('.validate')
+          .val('')
+          .removeClass('is-valid email-invalid required-invalid');
       },
       validateFields: function(){
         var fields = $('.validate'),
