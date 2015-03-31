@@ -1,5 +1,6 @@
 .section.contact{
   background-color: #CCF390;
+  color: $suaveGrey;
 
   input, textarea {
     padding-left: 40px;
@@ -98,11 +99,10 @@
     }
   }
 
-
-  background-image: url('#{$imgDir}doodle_02.png');
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-position: top right;
-
-  color: $suaveGrey;
+  @media (#{$bp-larger-than-phablet}) {
+    background-image: url('#{$imgDir}doodle_02.png');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
 }

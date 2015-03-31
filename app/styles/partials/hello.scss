@@ -31,11 +31,16 @@
       color: white;
     }
   }
+  @media (#{$bp-larger-than-phablet}) {
+    background-image: url('#{$imgDir}doodle_03.png');
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center right;
+  }
 
-  background-image: url('#{$imgDir}doodle_03.png');
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-position: top right;
-
+  @media (#{$bp-larger-than-tablet}) {
+    background-size: auto 100%;
+    background-position: top right;
+  }
 
 }
