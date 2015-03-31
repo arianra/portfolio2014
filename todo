@@ -1,2 +1,9 @@
-// TODO @arian fp-nav (rightside navigation), change css based on viewing page. see body class.
-// TODO @arian colored company icon for hover. & some effects.
+// TODO JS+CSS    fp-nav (rightside navigation), change css based on viewing page. see body class.
+// TODO ALL       colored company icon for hover. & some effects.
+// TODO JS        finish svg animation
+// TODO CSS       media sizes, mostly background, also margins and line-height
+// TODO JS+CSS    form succes & error notification styling, somekind of timeout hide
+// TODO css do    something about the -download resume- button
+// TODO JS+CSS    animated scroll down icon for the pages, don't show on media<tablet
+// TODO ALL       project sub pages
+// TODO BUG       contact form always goes to errorHandler

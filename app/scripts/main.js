@@ -140,17 +140,16 @@
           }
         }).done(function(data){
           _self.onResponse(data);
-        }).fail(function(){
-          _self.onResponse(false);
+        }).fail(function(data){
+          _self.onResponse(data);
         });
       },
       onResponse: function(data){
-        if(data === 1){
+        if('succes' in data){
           _self.succesHandler();
+          return;
         }
-        else {
-          _self.errorHandler();
-        }
+        _self.errorHandler();
       },
       errorHandler: function(){
         $('.send-notification.error').show();

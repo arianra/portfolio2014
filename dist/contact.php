@@ -1,5 +1,7 @@
 <?php
 
+
+
   $email = Trim( stripslashes( $_POST["email"] ) );
   $message = Trim( stripslashes( $_POST["message"] ) );
 
@@ -13,14 +15,15 @@
 		        . "Reply-To: " . mysql_escape_string("hello@arianrazi.com") . "\r\n"
 		        . "X-Mailer: PHP/" . phpversion();
 
+  header('Content-Type: application/json');
 
 	if (!mail($to_email,$subject,$message,$headers))
 	{
-		echo false;
+		echo json_encode(array('error' => "mail function returned false"));
 	}
 	else
 	{
-		echo true;
+		echo json_encode(array('success' => '1'));
 	}
 
 ?>
