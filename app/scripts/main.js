@@ -4,9 +4,15 @@
 
   var $ = _global.jQuery || _global.$ || jQuery || $;
 
-  _global.myPortfolio = _factory(_global, $, {});
+  if ( typeof define === 'function' && define.amd ) {
+    define( ['jquery'], function($){
+      _global.myPortfolio = _factory(_global, $, {});
+    });
+  } else {
+    _global.myPortfolio = _factory(_global, $, {});
+  }
 
-}( window, function(_global, $, myPortfolio){
+}( (typeof window !== 'undefined') ? window : this, function(_global, $, myPortfolio){
 
   myPortfolio.init = function(){
 
@@ -17,7 +23,7 @@
       navigation: true,
       fitToSection: false,
       autoScrolling: false,
-      navigationTooltips: ['Hello', 'What I do', 'Projects', 'Contact'],
+      navigationTooltips: ['Hello', 'What I do', 'Experience', 'Contact'],
       anchors: ['Hello', 'Skills', 'Projects', 'Contact']
     });
 
@@ -37,10 +43,68 @@
     });
 
     myPortfolio.validateContactForm();
-
     myPortfolio.contactButton = myPortfolio.contactSubmit();
 
+    myPortfolio.projectLoadOverlay = new myPortfolio.animateSvg( $('.pageload-overlay') );
+
     return this;
+  };
+
+  myPortfolio.animateSvg = function($el, options){
+    var s, el, opt,
+        _self = this;
+
+
+    _self.element = el = $el;
+    _self.options = opt = $.extend( {
+      speed : 200,
+      easeIn : mina.linear
+    }, options );
+
+    _self.scene = s = Snap( el.find('svg')[0] );
+    _self.path = s.select( 'path' );
+    _self.initialPath = _self.path.attr('d');
+
+    _self.animateInSteps = el.attr('data-in').split(';');
+    _self.isAnimating = false;
+
+    _self.show = function(){
+
+      if ( _self.isAnimating ) {return !1;}
+      _self.isAnimating = true;
+
+      _self.runAnimation( function(){
+        _self.path.attr( 'd', _self.initialPath );
+        _self.isAnimating = false;
+      });
+      el.addClass('show');
+
+    };
+    _self.hide = function(){
+
+    };
+
+    _self.runAnimation = function( onComplete ){
+      var step = 0,
+          steps = _self.animateInSteps,
+          stepsLength = steps.length,
+          speed = opt.speed,
+          easeIn = opt.easeIn;
+
+      var runSteps = function(step){
+        if( step === stepsLength ) {
+          onComplete();
+          //_self.path.stop();
+          return;
+        }
+
+        _self.path.animate( { 'path' : steps[step] }, speed, easeIn, function(){ runSteps(++step); } );
+      };
+
+      runSteps(step);
+    };
+
+    return _self;
   };
 
   myPortfolio.contactSubmit = function(){
@@ -56,6 +120,17 @@
 
         if( !valid ) {return;}
 
+        $.ajax( 'contact.php', {
+          data: {
+            email: $('input').val(),
+            message: $('textarea').val()
+          }
+        }).done(function(data){
+          console.log(data);
+        });
+
+        //TEMPORARY
+        _self.succesHandler();
       },
       onResponse: function(){},
       errorHandler: function(){},

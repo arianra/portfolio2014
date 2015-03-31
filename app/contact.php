@@ -4,7 +4,7 @@
   $message = Trim( stripslashes( $_POST['message'] ) );
 
   $to_email = 'hello@arianrazi.com';
-	$subject = 'Message from contact form (arianrazi.com)';
+	$subject = 'arianrazi.com -- Message from Contact Form';
 
 	$message =  'E-mail: ' . $email . '\r\n'
             . 'Message:\r\n' . $message;
@@ -22,3 +22,5 @@
 	{
 		echo true;
 	}
+
+?>

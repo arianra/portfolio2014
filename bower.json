@@ -6,6 +6,7 @@
     "skeleton-scss": "*",
     "fullpage.js": "~2.6.2",
     "fontawesome": "~4.3.0",
-    "stellar.js": "~0.6.2"
+    "stellar.js": "~0.6.2",
+    "snap.svg": "~0.3.0"
   }
 }

@@ -1,0 +1,23 @@
+.pageload-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.pageload-overlay.show {
+  visibility: visible;
+}
+
+.pageload-overlay svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.pageload-overlay svg path {
+  fill: #fff;
+}
