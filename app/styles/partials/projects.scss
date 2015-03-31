@@ -1,5 +1,5 @@
 .section.projects{
-  $projects: t-mobile, volkswagen, fox-sports, rabobank, bluebook, sensior;
+  $projects: t-mobile, volkswagen, fox-sports, rabobank, klm, sensior;
 
   background-color: #262626;
   color: #d1d1d1;
@@ -8,10 +8,9 @@
     padding: 2%;
   }
 
-
   .project-leader {
     width: 400px;
-    padding-top: 66.6667%; //height is 50% of width, vertical padding is calculated based on width
+    padding-top: 62.5%; // (250px/400px)*100
     display: block;
 
     span {
@@ -20,14 +19,14 @@
 
     @each $item in $projects {
       &.#{$item} {
-        //temporary index
-        $i: index( $projects, $item );
-        background: url('#{$imgDir}testproject0#{$i}.png') center center / auto 100% no-repeat;
+        background: url('#{$imgDir}leader_#{$item}.01.png') top center / auto 200% no-repeat;
+
+        &:hover{
+          background-position: bottom center;
+        }
       }
     }
   }
-
-
 
   background-image: url('#{$imgDir}bg_desktop02.png');
   background-repeat: no-repeat;

@@ -11,7 +11,7 @@
 	$message =  "E-mail:\r\n" . $email . "\r\n\n"
             . "Message:\r\n" . $message;
 
-	$headers =  "From: " . mysql_escape_string("hello@arianrazi.com") . "\r\n"
+	$headers =  "From: " . mysql_escape_string($email) . "\r\n"
 		        . "Reply-To: " . mysql_escape_string("hello@arianrazi.com") . "\r\n"
 		        . "X-Mailer: PHP/" . phpversion();
 
