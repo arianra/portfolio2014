@@ -89,7 +89,7 @@
       _self.runAnimation( true, function(){
         _self.isAnimating = false;
 
-        // todo @arian removeclass show here and maybe boolean for show state, also initialpath or endpath for hide
+        // todo removeclass show here and maybe boolean for show state, also initialpath or endpath for hide
       });
       el.addClass('show');
 
@@ -97,7 +97,7 @@
     _self.hide = function(){
       _self.isAnimating = true;
 
-      // todo @arian perhaps stop old animation with path.stop, but shouldn't be necessary
+      // todo perhaps stop old animation with path.stop, but shouldn't be necessary
       // todo start with addclass show and path set to endpath of animateInSteps (last in array, ~[4])
 
       _self.runAnimation( false, function(){

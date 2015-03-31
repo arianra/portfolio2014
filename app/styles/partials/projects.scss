@@ -1,17 +1,37 @@
 .section.projects{
+  $projects: t-mobile, volkswagen, fox-sports, rabobank, bluebook, sensior;
+
   background-color: #262626;
-
-  background-image: url('#{$imgDir}bg_desktop02.png');
-  background-repeat: no-repeat;
-  background-position: 50% 0;
-  background-size: 100% auto;
-  background-attachment: fixed;
-
   color: #d1d1d1;
 
   .four.columns {
     padding: 2%;
   }
 
-  @import "_pageload_overlay.scss";
+
+  .project-leader {
+    width: 400px;
+    padding-top: 66.6667%; //height is 50% of width, vertical padding is calculated based on width
+    display: block;
+
+    span {
+      display: none;
+    }
+
+    @each $item in $projects {
+      &.#{$item} {
+        //temporary index
+        $i: index( $projects, $item );
+        background: url('#{$imgDir}testproject0#{$i}.png') center center / auto 100% no-repeat;
+      }
+    }
+  }
+
+
+
+  background-image: url('#{$imgDir}bg_desktop02.png');
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: 100% auto;
+  background-attachment: fixed;
 }
