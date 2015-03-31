@@ -8,7 +8,7 @@
   $to_email = "hello@arianrazi.com";
 	$subject = "arianrazi.com -- Message from Contact Form";
 
-	$message =  "E-mail: " . $email . "\r\n\n"
+	$message =  "E-mail:\r\n" . $email . "\r\n\n"
             . "Message:\r\n" . $message;
 
 	$headers =  "From: " . mysql_escape_string("hello@arianrazi.com") . "\r\n"
