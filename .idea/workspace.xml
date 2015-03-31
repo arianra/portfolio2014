@@ -2,46 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38ebb790-f41e-46df-80f1-75b5a1aa20b5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/styles/partials/_pageload_overlay.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/todo" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/66045313.favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/FontAwesome.otf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/13609e11.bg_desktop03.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/225b9145.bg_desktop02.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/457d47be.testproject02.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/4801b71e.testproject03.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/722ac393.testproject01.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/7c4ebbcd.doodle_03.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/7d2a5cc0.doodle_02.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/87173692.doodle_01.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/9e5041bd.bg_desktop01.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/9ecba9c2.testproject05.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/a4e55814.fabric_01_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/ac68f6d5.fabric_01.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/c1e49afc.doodle_03r.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/cf3f72f9.testproject04.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/dcb00f3c.fabric_02.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/dcc0b136.testproject06.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/images/e5ca5c10.fabric_02_50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/robots.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/scripts/2dc939dd.vendor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/scripts/fbcb7806.main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/static/arian_razi_cv2014.01.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/styles/23c97a2e.main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/styles/e953e50c.vendor.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.jshintrc" afterPath="$PROJECT_DIR$/.jshintrc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/contact.php" afterPath="$PROJECT_DIR$/app/contact.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/main.js" afterPath="$PROJECT_DIR$/app/scripts/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/partials/projects.scss" afterPath="$PROJECT_DIR$/app/styles/partials/projects.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="portfolio2014.iws" />
@@ -73,31 +34,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48850575">
+            <state vertical-scroll-proportion="-9.444445">
               <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".jshintrc" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.jshintrc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.75">
-              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="137" column="29" selection-start-line="137" selection-start-column="29" selection-end-line="137" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.32786885">
+              <caret line="326" column="11" selection-start-line="326" selection-start-column="11" selection-end-line="326" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -154,7 +105,6 @@
         <option value="$PROJECT_DIR$/dist/index.html" />
         <option value="$PROJECT_DIR$/bower_components/skeleton-scss/bower.json" />
         <option value="$PROJECT_DIR$/bower.json" />
-        <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/app/styles/partials/_shared.scss" />
         <option value="$PROJECT_DIR$/app/styles/partials/skills.scss" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -170,6 +120,7 @@
         <option value="$PROJECT_DIR$/app/contact.php" />
         <option value="$PROJECT_DIR$/.jshintrc" />
         <option value="$PROJECT_DIR$/app/scripts/main.js" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
       </list>
     </option>
   </component>
@@ -324,6 +275,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="portfolio2014" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="portfolio2014" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="portfolio2014" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -778,14 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="137" column="29" selection-start-line="137" selection-start-column="29" selection-end-line="137" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.jshintrc">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.75">
@@ -796,8 +753,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48850575">
+        <state vertical-scroll-proportion="-9.444445">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32786885">
+          <caret line="326" column="11" selection-start-line="326" selection-start-column="11" selection-end-line="326" selection-end-column="11" />
           <folding />
         </state>
       </provider>
