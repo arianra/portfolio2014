@@ -12,7 +12,11 @@ h1{
 #fp-nav {
 
   &.hello {
-
+    span {
+      &:hover {
+        background-color: white;
+      }
+    }
   }
   &.skills {
     .fp-tooltip {
@@ -20,6 +24,9 @@ h1{
     }
     span {
       background-color: $passionateRed;
+      &:hover {
+        background-color: $mineShaftBlack;
+      }
     }
 
   }
@@ -34,6 +41,9 @@ h1{
     }
     span {
       background-color: $suaveGrey;
+      &:hover {
+        background-color: $passionateRed;
+      }
     }
 
   }

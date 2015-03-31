@@ -151,8 +151,8 @@
           }
         }).done(function(data){
           _self.onResponse(data);
-        }).fail(function(data){
-          _self.onResponse(data);
+        }).fail(function(jqXHR){
+          _self.errorHandler();
         });
       },
       onResponse: function(data){
