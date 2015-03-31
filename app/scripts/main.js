@@ -121,6 +121,7 @@
         if( !valid ) {return;}
 
         $.ajax( 'contact.php', {
+          method: 'POST',
           data: {
             email: $('input').val(),
             message: $('textarea').val()
