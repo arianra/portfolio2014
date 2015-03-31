@@ -5,5 +5,7 @@
 // TODO JS+CSS    form succes & error notification styling, somekind of timeout hide
 // TODO css do    something about the -download resume- button
 // TODO JS+CSS    animated scroll down icon for the pages, don't show on media<tablet
-// TODO ALL       project sub pages
-// TODO BUG       contact form always goes to errorHandler
+// TODO ALL       project sub pages (use reBuild() - fullpage)
+// TODO JS        on sub pages, hide navigation through css class hidden
+// TODO TEXT      change second paragraph in -what i do- it sucks.
+

@@ -15,16 +15,27 @@
 }( (typeof window !== 'undefined') ? window : this, function(_global, $, myPortfolio){
 
   myPortfolio.init = function(){
+    var fpNav;
 
     $('#main-pages').fullpage({
       scrollingSpeed: 500,
       touchSensitivity: 25,
       scrollBar: true,
       navigation: true,
-      fitToSection: false,
+      fitToSection: false, // todo responsible for auto scrolling between pages
       autoScrolling: false,
+      keyboardScrolling: true,
       navigationTooltips: ['Hello', 'What I do', 'Experience', 'Contact'],
-      anchors: ['Hello', 'Skills', 'Projects', 'Contact']
+      anchors: ['hello', 'skills', 'projects', 'contact'],
+
+      afterRender: function(){
+        fpNav = $('#fp-nav');
+      },
+      afterLoad: function(anchorLink, index){
+        fpNav.removeClass('hello skills projects contact').addClass(anchorLink);
+      },
+      onLeave: function(index, nextIndex, direction){}
+
     });
 
     $('.section.contact').append( this.createRainbowHeader(17) );

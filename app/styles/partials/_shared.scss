@@ -9,6 +9,37 @@ h1{
   font-weight: 900;
 }
 
+#fp-nav {
+
+  &.hello {
+
+  }
+  &.skills {
+    .fp-tooltip {
+      color: $mineShaftBlack;
+    }
+    span {
+      background-color: $passionateRed;
+    }
+
+  }
+  &.projects {
+    span {
+      background-color: $patrickBatemanWhite;
+    }
+  }
+  &.contact {
+    .fp-tooltip {
+      color: $passionateRed;
+    }
+    span {
+      background-color: $suaveGrey;
+    }
+
+  }
+
+}
+
 
 header.rainbow {
   display: block;
