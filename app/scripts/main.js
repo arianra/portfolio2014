@@ -139,21 +139,16 @@
             message: $('textarea').val()
           }
         }).done(function(data){
-          console.log('done', data);
           _self.onResponse(data);
         }).fail(function(data){
-          console.log('fail', data);
           _self.onResponse(data);
         });
       },
       onResponse: function(data){
-        console.log('onresponse', data);
-        if('succes' in data){
-          console.log('success in onresponse');
+        if('success' in data){
           _self.succesHandler();
           return;
         }
-        console.log('no success in onresponse');
         _self.errorHandler();
       },
       errorHandler: function(){
