@@ -13,6 +13,8 @@
     padding-top: 62.5%; // (250px/400px)*100
     display: block;
 
+    cursor: pointer;
+
     span {
       display: none;
     }
@@ -26,6 +28,13 @@
         }
       }
     }
+  }
+
+  .container {
+    z-index: 500;
+  }
+  .pageload-overlay {
+    z-index: 600;
   }
 
   background-image: url('#{$imgDir}bg_desktop02.png');

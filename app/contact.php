@@ -5,7 +5,7 @@
   $message = Trim( stripslashes( $_POST["message"] ) );
 
   $to_email = "hello@arianrazi.com";
-	$subject = "arianrazi.com -- Message from Contact Form";
+	$subject = "arianrazi.com - contact me";
 
 	$headers =  "From: " . mysql_escape_string($email) . "\r\n"
 		        . "Reply-To: " . mysql_escape_string("hello@arianrazi.com") . "\r\n"

@@ -54,56 +54,127 @@
     });
 
     myPortfolio.validateContactForm();
-    myPortfolio.contactButton = myPortfolio.contactSubmit();
+    myPortfolio.contactButton = myPortfolio.ContactSubmit();
 
-    myPortfolio.projectLoadOverlay = new myPortfolio.animateSvg( $('.pageload-overlay') );
+    //myPortfolio.projectLoadOverlay = new myPortfolio.AnimateSvg( $('.pageload-overlay') );
+    myPortfolio.projectSwither= new myPortfolio.ProjectSwitcher();
 
     return this;
   };
 
-  myPortfolio.animateSvg = function($el, options){
+  myPortfolio.ProjectSwitcher = function(animatedOverlay){
+    var _self = this,
+        leaders = $('.project-leader'),
+        containers = $('.container'),
+        firstPage = containers.filter('.leaders-page'),
+        projectPages = containers.filter('.project-page');
+
+    _self.animatedOverlay = animatedOverlay || new myPortfolio.AnimateSvg( $('.pageload-overlay') );
+
+    $.extend( _self, {
+      init: function(){
+        _self.initListeners();
+
+        return _self;
+      },
+      initListeners: function(){
+        leaders.click(function(e){
+          var projectAnchor = $(this).attr('data-project'),
+              fillColor = $(this).attr('data-fill');
+
+          _self.showProject(projectAnchor, fillColor);
+        });
+        // todo close button
+        // todo don't forget to add a fillColor for going back to main page
+      },
+      showProject: function(anchor, fillColor){
+        _self.animatedOverlay.show(
+          function(){
+            var projectContainer = projectPages.filter('.' + anchor);
+
+            _self.switchPage(firstPage,projectContainer);
+            _self.animatedOverlay.hide(undefined, fillColor);
+          }, fillColor);
+      },
+      switchPage: function( from, to ){
+        var f = ( from instanceof jQuery ) ? from : $(from),
+            t = ( to instanceof jQuery ) ? to : $(to),
+            section = $('.section.projects');
+
+        f.addClass('hidden');
+        t.removeClass('hidden');
+
+        if(f.is(firstPage) && t.attr('data-project') ){
+          section.addClass(t.attr('data-project'));
+        }
+
+        if(t.is(firstPage) && f.attr('data-project') ){
+          section.removeClass(f.attr('data-project'));
+        }
+
+        $.fn.fullpage.reBuild();
+      }
+    });
+
+    return _self.init();
+  };
+
+  myPortfolio.AnimateSvg = function($el, options){
     var s, el, opt,
         _self = this;
 
 
     _self.element = el = $el;
     _self.options = opt = $.extend( {
-      speed : 200,
+      speedIn : 200,
+      speedOut: 100,
       easeIn : mina.linear,
-      easeOut: mina.linear
+      easeOut: mina.linear,
+      fill: '#fff'
     }, options );
 
     _self.scene = s = Snap( el.find('svg')[0] );
     _self.path = s.select( 'path' );
+    _self.$path = $('.pageload-overlay svg path');
     _self.initialPath = _self.path.attr('d');
 
     _self.animateInSteps = el.attr('data-in').split(';');
     _self.animateOutSteps = el.attr('data-out').split(';');
     _self.isAnimating = false;
 
-    _self.show = function(){
+    _self.show = function( callback, fillColor ){
+      var fill = fillColor || opt.fill;
 
       if ( _self.isAnimating ) {return !1;}
       _self.isAnimating = true;
+      _self.$path.css('fill',fill);
 
       _self.runAnimation( true, function(){
+        //onComplete callback
         _self.isAnimating = false;
 
         // todo removeclass show here and maybe boolean for show state, also initialpath or endpath for hide
+        if(callback){callback();}
       });
       el.addClass('show');
 
     };
-    _self.hide = function(){
+    _self.hide = function( callback, fillColor ){
+      var fill = fillColor || opt.fill;
+
       _self.isAnimating = true;
+      _self.$path.css('fill',fill);
 
       // todo perhaps stop old animation with path.stop, but shouldn't be necessary
       // todo start with addclass show and path set to endpath of animateInSteps (last in array, ~[4])
 
       _self.runAnimation( false, function(){
+        //onComplete callback
         _self.path.attr( 'd', _self.initialPath );
         _self.isAnimating = false;
         el.removeClass('show');
+
+        if(callback){callback();}
       });
 
     };
@@ -112,7 +183,7 @@
       var step = 0,
           steps = (isAnimateIn) ? _self.animateInSteps : _self.animateOutSteps,
           stepsLength = steps.length,
-          speed = opt.speed,
+          speed = (isAnimateIn) ? opt.speedIn : opt.speedOut,
           easeIn = (isAnimateIn) ? opt.easeIn : opt.easeOut;
 
       var runSteps = function(step){
@@ -130,7 +201,7 @@
     return _self;
   };
 
-  myPortfolio.contactSubmit = function(){
+  myPortfolio.ContactSubmit = function(){
     var _self = this;
 
     $.extend( _self, {
@@ -191,8 +262,6 @@
   };
 
   myPortfolio.validateContactForm = function(){
-
-    var _self = this;
 
     var _validateEmail = function(input){
       var emailRegEx = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;

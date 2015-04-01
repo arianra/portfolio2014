@@ -1,10 +1,9 @@
 // TODO ALL       colored company icon for hover. & some effects.
-// TODO JS        finish svg animation
 // TODO CSS       media sizes, mostly background, also margins and line-height
 // TODO JS+CSS    form success & error notification styling, somekind of timeout hide
 // TODO css do    something about the -download resume- button
 // TODO JS+CSS    animated scroll down icon for the pages, don't show on media<tablet
 // TODO ALL       project sub pages (use reBuild() - fullpage)
 // TODO JS        on sub pages, hide navigation through css class hidden
-// TODO JS        animateSVG show and hide should probably allow another callback, that way another object can take care of sub page logic
 // TODO CSS       projects bg - media - change size for < desktop
+// TODO CSS       animtedOverlay, maybe second fill color, black or something
