@@ -63,8 +63,10 @@
   };
 
   myPortfolio.ProjectSwitcher = function(animatedOverlay){
-    var _self = this,
+    var currentProject,
+        _self = this,
         leaders = $('.project-leader'),
+        closeButtons = $('.close-project'),
         containers = $('.container'),
         firstPage = containers.filter('.leaders-page'),
         projectPages = containers.filter('.project-page');
@@ -84,34 +86,48 @@
 
           _self.showProject(projectAnchor, fillColor);
         });
-        // todo close button
-        // todo don't forget to add a fillColor for going back to main page
+        closeButtons.click(function(){
+          _self.closeProject();
+        });
       },
       showProject: function(anchor, fillColor){
         _self.animatedOverlay.show(
           function(){
             var projectContainer = projectPages.filter('.' + anchor);
+            currentProject = projectContainer;
 
             _self.switchPage(firstPage,projectContainer);
             _self.animatedOverlay.hide(undefined, fillColor);
           }, fillColor);
       },
+      closeProject: function(){
+        var fillColor = firstPage.attr('data-fill');
+
+        _self.animatedOverlay.show(function(){
+          _self.switchPage( currentProject, firstPage );
+          _self.animatedOverlay.hide(undefined, fillColor);
+        },fillColor);
+      },
       switchPage: function( from, to ){
         var f = ( from instanceof jQuery ) ? from : $(from),
             t = ( to instanceof jQuery ) ? to : $(to),
-            section = $('.section.projects');
+            section = $('.section.projects'),
+            navBar = $('#fp-nav');
 
         f.addClass('hidden');
         t.removeClass('hidden');
 
         if(f.is(firstPage) && t.attr('data-project') ){
           section.addClass(t.attr('data-project'));
+          navBar.hide();
         }
 
         if(t.is(firstPage) && f.attr('data-project') ){
           section.removeClass(f.attr('data-project'));
+          navBar.show();
         }
 
+        $.fn.fullpage.moveTo('projects');
         $.fn.fullpage.reBuild();
       }
     });
@@ -126,7 +142,7 @@
 
     _self.element = el = $el;
     _self.options = opt = $.extend( {
-      speedIn : 200,
+      speedIn : 100,
       speedOut: 100,
       easeIn : mina.linear,
       easeOut: mina.linear,

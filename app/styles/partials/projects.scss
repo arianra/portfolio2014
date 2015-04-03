@@ -1,5 +1,6 @@
 .section.projects{
   $projects: t-mobile, volkswagen, fox-sports, rabobank, klm, sensior;
+  $projectColors: #C7003F, #F90050, #F96A00, #FAAB00, #DAF204, #8D9274;
 
   background-color: #262626;
   color: #d1d1d1;
@@ -23,10 +24,23 @@
       &.#{$item} {
         background: url('#{$imgDir}leader_#{$item}.01.png') top center / auto 200% no-repeat;
 
+        transition: all .5s ease-in-out;
+
         &:hover{
           background-position: bottom center;
+          background-size: auto 210%;
+
+          transition: background-size .2s ease-in-out;
         }
       }
+    }
+  }
+
+  @each $item in $projects {
+    $i: index( $projects, $item );
+    &.#{$item} {
+      background-color: #{nth($projectColors, $i)};
+      background-image: none;
     }
   }
 
@@ -42,4 +56,8 @@
   background-position: 50% 0;
   background-size: 100% auto;
   background-attachment: fixed;
+
+  .close-project {
+    cursor: pointer;
+  }
 }

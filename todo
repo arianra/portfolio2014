@@ -1,4 +1,3 @@
-// TODO ALL       colored company icon for hover. & some effects.
 // TODO CSS       media sizes, mostly background, also margins and line-height
 // TODO JS+CSS    form success & error notification styling, somekind of timeout hide
 // TODO css do    something about the -download resume- button
@@ -6,4 +5,3 @@
 // TODO ALL       project sub pages (use reBuild() - fullpage)
 // TODO JS        on sub pages, hide navigation through css class hidden
 // TODO CSS       projects bg - media - change size for < desktop
-// TODO CSS       animtedOverlay, maybe second fill color, black or something
