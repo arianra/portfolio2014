@@ -2,6 +2,5 @@
 // TODO JS+CSS    form success & error notification styling, somekind of timeout hide
 // TODO css do    something about the -download resume- button
 // TODO JS+CSS    animated scroll down icon for the pages, don't show on media<tablet
-// TODO ALL       project sub pages (use reBuild() - fullpage)
-// TODO JS        on sub pages, hide navigation through css class hidden
 // TODO CSS       projects bg - media - change size for < desktop
+// TODO IMG       sensior img, tablet heeft witte hoeken...
