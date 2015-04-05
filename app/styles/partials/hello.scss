@@ -33,6 +33,15 @@
       color: white;
     }
   }
+
+  .scroll-down {
+    position: absolute;
+    bottom: -25px;
+    left: calc(50% - 19px);
+    font-size: 60px;
+    color: #71D5FF;
+  }
+
   @media (#{$bp-larger-than-phablet}) {
     background-image: url('#{$imgDir}doodle_03.png');
     background-size: auto 50%;
@@ -43,10 +52,6 @@
   @media (#{$bp-larger-than-tablet}) {
     background-size: auto 100%;
     background-position: top right;
-  }
-
-  .button {
-
   }
 
 }

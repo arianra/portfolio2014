@@ -13,11 +13,29 @@
   }
 
   p, .fa-ul{
-    line-height: 3rem;
+    line-height: 2rem;
   }
 
   .fa-li {
     color: $passionateRed;
-    top: 0.75rem;
+    top: 0.25rem;
+  }
+
+  @media (#{$bp-larger-than-phablet}) {
+    p, .fa-ul{
+      line-height: 2.5rem;
+    }
+    .fa-li {
+      top: 0.6rem;
+    }
+  }
+
+  @media (#{$bp-larger-than-tablet}) {
+    p, .fa-ul{
+      line-height: 3rem;
+    }
+    .fa-li {
+      top: 0.75rem;
+    }
   }
 }

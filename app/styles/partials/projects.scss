@@ -1,6 +1,6 @@
 .section.projects{
   $projects:      t-mobile, volkswagen, fox-sports, rabobank, klm,      sensior;
-  $projectColors: #E4B9AF,  #7F807F,    #F6F8BE,    #B0BDAF,  #DFEFFA,  #FDEECD;
+  $projectColors: #B9EE84,  #B3E8F5,    #CCCCFF,    #FFB261,  #EBEBEB,  #FF99D6;
 
   background-color: #262626;
   color: #d1d1d1;
@@ -41,6 +41,13 @@
     &.#{$item} {
       background-color: #{nth($projectColors, $i)};
       background-image: none;
+      color: darken( nth($projectColors, $i), 66.667% );
+    }
+  }
+
+  .project-page {
+    h3 {
+      font-weight: 500;
     }
   }
 
