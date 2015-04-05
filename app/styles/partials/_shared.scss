@@ -11,7 +11,7 @@ h1{
 }
 
 #fp-nav {
-  display: hidden;
+  display: none;
 
   @media (#{$bp-larger-than-tablet}) {
     display: block;
