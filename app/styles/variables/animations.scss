@@ -25,3 +25,29 @@
     animation-play-state: running;
   }
 }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    top: -50px;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
+
+@mixin anim-fade-in-view($duration:"500ms", $delay:"0ms"){
+  animation-duration: #{$duration};
+  animation-delay: #{$delay};
+  animation-iteration-count: once;
+  animation-timing-function:
+  cubic-bezier(0,0,0,1);
+  animation-name: fade-in;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+
+  &.run-anim {
+    animation-play-state: running;
+  }
+}

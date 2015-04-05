@@ -1,11 +1,28 @@
 .section.skills{
   background-color: #FFFFFF;
-
   color: $soilGrey;
+  font-weight: 300;
 
   h4 {
     font-weight: 500;
     color: $passionateRed;
+
+    padding-top: 10%;
+    text-align: center;
+    @media (#{$bp-larger-than-phablet}) {
+      padding-top: 0;
+    }
+    @media (#{$bp-larger-than-tablet}) {
+      text-align: left;
+    }
+  }
+
+  .what-i-offer{
+    em{
+      font-weight: 600;
+      font-variant: small-caps;
+      color: $passionateRed;
+    }
   }
 
   .button {
@@ -14,6 +31,7 @@
 
   p, .fa-ul{
     line-height: 2rem;
+    letter-spacing: .05rem;
   }
 
   .fa-li {
@@ -32,7 +50,7 @@
 
   @media (#{$bp-larger-than-tablet}) {
     p, .fa-ul{
-      line-height: 3rem;
+      line-height: 2.8rem;
     }
     .fa-li {
       top: 0.75rem;

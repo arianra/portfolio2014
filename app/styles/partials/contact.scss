@@ -2,6 +2,10 @@
   background-color: #CCF390;
   color: $suaveGrey;
 
+  h5 {
+    letter-spacing: .1rem;
+  }
+
   input, textarea {
     padding-left: 40px;
     font-size: 16px;
@@ -60,13 +64,16 @@
     }
   }
 
+  label {
+    color: $mossGreen;
+    font-weight: 300;
+  }
+
   .validation-notification{
 
     margin-bottom: 1.5rem;
     padding: 0.7% 3% 0.5% 3%;
 
-    //background-color: $passionateRed;
-    //color: white;
     color: $passionateRed;
 
     font-weight: 400;

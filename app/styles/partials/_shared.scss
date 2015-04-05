@@ -11,6 +11,11 @@ h1{
 }
 
 #fp-nav {
+  display: hidden;
+
+  @media (#{$bp-larger-than-tablet}) {
+    display: block;
+  }
 
   &.hello {
     span {
