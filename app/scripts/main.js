@@ -25,7 +25,7 @@
       fitToSection: false, // todo responsible for auto scrolling between pages
       autoScrolling: false,
       keyboardScrolling: true,
-      navigationTooltips: ['Hello', 'What I do', 'Experience', 'Contact'],
+      navigationTooltips: ['Hello', 'What I offer', 'Experience', 'Contact'],
       anchors: ['hello', 'skills', 'projects', 'contact'],
 
       afterRender: function(){
