@@ -124,12 +124,12 @@
 
         if(f.is(firstPage) && t.attr('data-project') ){
           section.addClass(t.attr('data-project'));
-          navBar.hide();
+          navBar.css('display','none');
         }
 
         if(t.is(firstPage) && f.attr('data-project') ){
           section.removeClass(f.attr('data-project'));
-          navBar.show();
+          navBar.css('display',''); //$.show forces display block which interferes with css media queries
         }
 
         $.fn.fullpage.moveTo('projects');

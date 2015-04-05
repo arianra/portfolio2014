@@ -72,11 +72,14 @@
     }
   }
 
-  .project-image {
+  .project-content {
     padding-top: 10%;
 
-    @media (#{$bp-larger-than-desktop}) {
+    @media (#{$bp-larger-than-phablet}) {
       padding-top: 5%;
+    }
+    @media (#{$bp-larger-than-desktop}) {
+      padding-top: 2%;
     }
   }
 
