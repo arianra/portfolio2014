@@ -1,0 +1,27 @@
+@keyframes blast {
+  0%   {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.2;
+    transform: scale(1.5);
+  }
+  100%   {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@mixin anim-focus-blast($duration:"500ms"){
+  animation-duration: #{$duration};
+  animation-timing-function:
+  cubic-bezier(0, 0, 0, 1.74);
+  animation-iteration-count: once;
+  animation-play-state: paused;
+
+  &:focus {
+    animation-name: blast;
+    animation-play-state: running;
+  }
+}

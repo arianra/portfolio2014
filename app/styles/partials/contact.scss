@@ -24,13 +24,14 @@
   }
 
   .button-primary {
+    @include anim-focus-blast;
+
     background-color: $mossGreen;
     border: none;
     border-radius: 0;
 
     &:hover{
       background-color: $suaveGrey;
-
     }
   }
 
@@ -93,7 +94,6 @@
   .contact-icon-column {
     text-align: center;
 
-
     .fa-stack-1x {
       color: $milkshakeGreen;
     }
@@ -101,6 +101,7 @@
     a{
       color: $mossGreen;
       text-decoration: none;
+      @include anim-focus-blast;
 
       &:hover{
         color: $suaveGrey;
@@ -113,34 +114,5 @@
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: top right;
-  }
-
-  //send button animation
-  @keyframes echo {
-    0%   {
-      opacity: 0.8;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.2;
-      transform: scale(1.5);
-    }
-    100%   {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  .button-primary {
-    animation-duration: 500ms;
-    animation-timing-function:
-    cubic-bezier(0, 0, 0, 1.74);
-    animation-iteration-count: once;
-    animation-play-state: paused;
-
-    &:focus {
-      animation-name: echo;
-      animation-play-state: running;
-    }
   }
 }

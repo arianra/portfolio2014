@@ -82,11 +82,13 @@
       initListeners: function(){
         leaders.click(function(e){
           var projectAnchor = $(this).attr('data-project'),
-              fillColor = $(this).attr('data-fill');
+              fillColor = getStyleRuleValue('background-color','.section.projects.'+projectAnchor);
 
           _self.showProject(projectAnchor, fillColor);
         });
-        closeButtons.click(function(){
+        closeButtons.click(function(e){
+          e.preventDefault();
+
           _self.closeProject();
         });
       },
@@ -101,7 +103,7 @@
           }, fillColor);
       },
       closeProject: function(){
-        var fillColor = firstPage.attr('data-fill');
+        var fillColor = getStyleRuleValue('background-color','.section.projects');
 
         _self.animatedOverlay.show(function(){
           _self.switchPage( currentProject, firstPage );
@@ -387,6 +389,21 @@
 
     return createColor(rLen, r, colorArray);
   };
+
+  function getStyleRuleValue(style, selector, sheet) {
+    var sheets = typeof sheet !== 'undefined' ? [sheet] : document.styleSheets;
+    for (var i = 0, l = sheets.length; i < l; i++) {
+      var sheet = sheets[i];
+      if( !sheet.cssRules ) { continue; }
+      for (var j = 0, k = sheet.cssRules.length; j < k; j++) {
+        var rule = sheet.cssRules[j];
+        if (rule.selectorText && rule.selectorText.split(',').indexOf(selector) !== -1) {
+          return rule.style[style];
+        }
+      }
+    }
+    return null;
+  }
 
   return myPortfolio.init();
 }));

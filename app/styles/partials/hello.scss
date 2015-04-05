@@ -19,6 +19,8 @@
   }
 
   .button{
+    @include anim-focus-blast;
+
     color: white;
     border-color: white;
     border-radius: 0;
@@ -41,6 +43,10 @@
   @media (#{$bp-larger-than-tablet}) {
     background-size: auto 100%;
     background-position: top right;
+  }
+
+  .button {
+
   }
 
 }
