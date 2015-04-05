@@ -8,7 +8,7 @@
   .four.columns {
     padding: 2%;
   }
-  
+
   p {
     font-weight: 300;
   }
@@ -46,6 +46,37 @@
       background-color: #{nth($projectColors, $i)};
       background-image: none;
       color: darken( nth($projectColors, $i), 66.667% );
+
+      .close-project {
+        margin-top:1%;
+
+        border-radius: 0;
+        border: 1px solid darken( nth($projectColors, $i), 33.333% );
+        //background-color: darken( nth($projectColors, $i), 50% );
+        color: darken( nth($projectColors, $i), 33.333% );
+
+        &:hover {
+          background-color: darken( nth($projectColors, $i), 33.333% );
+          color: white;
+        }
+
+        //&:after {
+        //  content: "\f00d";
+        //  font-family: FontAwesome;
+        //  font-size: 22px;
+        //  position: relative;
+        //  top: 2px;
+        //  margin-left: 5px;
+        //}
+      }
+    }
+  }
+
+  .project-image {
+    padding-top: 10%;
+
+    @media (#{$bp-larger-than-desktop}) {
+      padding-top: 5%;
     }
   }
 
@@ -76,18 +107,4 @@
   background-position: 50% 0;
   background-size: 100% auto;
   background-attachment: fixed;
-
-  .close-project {
-    text-decoration: none;
-    text-transform: uppercase;
-
-    &:after {
-      content: "\f00d";
-      font-family: FontAwesome;
-      font-size: 22px;
-      position: relative;
-      top: 2px;
-      margin-left: 5px;
-    }
-  }
 }
