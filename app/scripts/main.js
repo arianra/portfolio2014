@@ -34,8 +34,6 @@
         $('.column-introduction').find('h1, h2, h3, p').addClass('run-anim');
       },
       afterLoad: function(anchorLink, index){
-        console.log('hurdur');
-
         fpNav.removeClass('hello skills projects contact').addClass(anchorLink);
       }
 

@@ -28,8 +28,6 @@
       &.#{$item} {
         background: url('#{$imgDir}leader_#{$item}.01.png') top center / auto 200% no-repeat;
 
-        //transition: background-size .5s ease-in-out;
-
         &:hover{
           background-position: bottom center;
           background-size: auto 210%;
@@ -52,35 +50,49 @@
 
         border-radius: 0;
         border: 1px solid darken( nth($projectColors, $i), 33.333% );
-        //background-color: darken( nth($projectColors, $i), 50% );
         color: darken( nth($projectColors, $i), 33.333% );
 
         &:hover {
           background-color: darken( nth($projectColors, $i), 33.333% );
           color: white;
         }
-
-        //&:after {
-        //  content: "\f00d";
-        //  font-family: FontAwesome;
-        //  font-size: 22px;
-        //  position: relative;
-        //  top: 2px;
-        //  margin-left: 5px;
-        //}
       }
     }
   }
 
   .project-content {
-    padding-top: 10%;
+    padding-top: 5%;
 
     @media (#{$bp-larger-than-phablet}) {
-      padding-top: 5%;
+      padding-top: 10%;
     }
     @media (#{$bp-larger-than-desktop}) {
       padding-top: 2%;
     }
+
+    h3{
+      font-size: 3rem;
+    }
+    p{
+      font-size: 1.5rem;
+    }
+    @media (#{$bp-larger-than-tablet}) {
+      h3{
+        font-size: 2rem;
+      }
+      p{
+        font-size: 1.3rem;
+      }
+    }
+    @media (#{$bp-larger-than-tablet}) {
+      h3{
+        font-size: 3.6rem;
+      }
+      p{
+        font-size: 1.5rem;
+      }
+    }
+
   }
 
 
@@ -88,10 +100,6 @@
     font-weight: 500;
 
     text-align: center;
-    padding-top: 10%;
-    @media (#{$bp-larger-than-tablet}) {
-      padding-top: 0;
-    }
     @media (#{$bp-larger-than-tablet}) {
       text-align: left;
     }
