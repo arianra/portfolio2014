@@ -7,6 +7,14 @@
 
   .four.columns {
     padding: 2%;
+
+    width: 66.6667%;
+    margin: auto;
+    float: none;
+    @media (#{$bp-larger-than-phablet}) {
+      width: 30.66667%;
+      float: left;
+    }
   }
 
   p {
@@ -102,6 +110,13 @@
     text-align: center;
     @media (#{$bp-larger-than-tablet}) {
       text-align: left;
+    }
+  }
+
+  .leaders-page h3 {
+   padding-top: 10%;
+    @media (#{$bp-larger-than-tablet}){
+      padding-top: 0;
     }
   }
 

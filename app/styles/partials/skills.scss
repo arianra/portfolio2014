@@ -20,6 +20,10 @@
     }
   }
 
+  .button {
+    border-radius: 0;
+  }
+
   .what-i-offer{
     em{
       font-weight: 600;
@@ -28,8 +32,12 @@
     }
   }
 
-  .button {
-    border-radius: 0;
+  .skills-experience {
+
+    padding-bottom: 5%;
+    @media (#{$bp-larger-than-phablet}) {
+      padding-bottom: 0;
+    }
   }
 
   p, .fa-ul{
