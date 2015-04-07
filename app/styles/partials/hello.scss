@@ -10,7 +10,7 @@
   h1,h2,h3 {
     text-shadow: #00A2E5 0px 2px 0px;
   }
-  
+
   h2 {
     font-size: 3.2rem;
     @media (#{$bp-larger-than-tablet}) {
@@ -89,7 +89,7 @@
     }
   }
 
-  .scroll-down {
+  .scroll-down-from-home {
     position: absolute;
     bottom: -25px;
     left: calc(50% - 19px);
