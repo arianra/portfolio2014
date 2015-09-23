@@ -68,7 +68,7 @@
     var sillyStack = $('.fa-stack');
 
     sillyStack.on('mouseover', function(){
-      sillyToggle(this, true)
+      sillyToggle(this, true);
     });
 
     sillyStack.on('mouseout', function(){
@@ -76,7 +76,7 @@
     });
 
     function sillyToggle( parent, hideOrShow ){
-      return $(parent).find('.fa-square')[(hideOrShow ? 'addClass' : 'removeClass')]('fa-spin')
+      return $(parent).find('.fa-square')[(hideOrShow ? 'addClass' : 'removeClass')]('fa-spin');
     }
   };
 
