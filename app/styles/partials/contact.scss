@@ -40,9 +40,12 @@
     background-color: $mossGreen;
     border: none;
     border-radius: 0;
+    letter-spacing: 0.2rem;
+    transition: all .2s cubic-bezier(0, 0, 0, 1.74);
 
     &:hover{
       background-color: $suaveGrey;
+      letter-spacing: 0.4rem;
     }
   }
 

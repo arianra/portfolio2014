@@ -57,10 +57,27 @@
     myPortfolio.validateContactForm();
     myPortfolio.contactButton = myPortfolio.ContactSubmit();
 
-    //myPortfolio.projectLoadOverlay = new myPortfolio.AnimateSvg( $('.pageload-overlay') );
     myPortfolio.projectSwither= new myPortfolio.ProjectSwitcher();
 
+    myPortfolio.sillySpin();
+
     return this;
+  };
+
+  myPortfolio.sillySpin = function(){
+    var sillyStack = $('.fa-stack');
+
+    sillyStack.on('mouseover', function(){
+      sillyToggle(this, true)
+    });
+
+    sillyStack.on('mouseout', function(){
+      sillyToggle(this, false);
+    });
+
+    function sillyToggle( parent, hideOrShow ){
+      return $(parent).find('.fa-square')[(hideOrShow ? 'addClass' : 'removeClass')]('fa-spin')
+    }
   };
 
   myPortfolio.ProjectSwitcher = function(animatedOverlay){

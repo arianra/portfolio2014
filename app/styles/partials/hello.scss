@@ -79,10 +79,15 @@
     color: white;
     border-color: white;
     border-radius: 0;
+    letter-spacing: 0.2rem;
+
+    transition: letter-spacing .2s cubic-bezier(0, 0, 0, 1.74);
 
     &:hover {
       background-color: $profoundPurple;
-      border-color: $profoundPurple
+      border-color: $profoundPurple;
+
+      letter-spacing: 0.4rem;
     }
     &:focus {
       color: white;
