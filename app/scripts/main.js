@@ -28,18 +28,18 @@
       navigationTooltips: ['Hello', 'What I offer', 'Experience', 'Contact'],
       anchors: ['hello', 'skills', 'projects', 'contact'],
 
-      afterRender: function(e){
-        fpNav = $('#fp-nav');
-
+      afterRender: function(e){ 
         $('.column-introduction').find('h1, h2, h3, p').addClass('run-anim');
       },
       afterLoad: function(anchorLink, index){
+        fpNav = $('#fp-nav');
+        
         fpNav.removeClass('hello skills projects contact').addClass(anchorLink);
       }
 
     });
 
-    $('.section.contact').append( this.createRainbowHeader(17) );
+    //$('.section.contact').append( this.createRainbowFooter(17) );
 
     //list item rainbow gradient
     var $rainbowList = $('.skills .fa-li'),
@@ -369,10 +369,10 @@
 
   };
 
-  myPortfolio.createRainbowHeader = function(colorAmount){
+  myPortfolio.createRainbowFooter = function(colorAmount){
     var cLen = colorAmount || 12,
         rainbowArray = this.dirtyRainbow(cLen),
-        $header = $('<header/>').addClass('rainbow'),
+        $header = $('<footer/>').addClass('rainbow'),
         i = -1;
 
     for( ; rainbowArray[++i] ; ){

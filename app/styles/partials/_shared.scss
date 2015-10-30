@@ -1,6 +1,7 @@
 
 body {
-  background: #fafafa;
+  // background: #fafafa;
+  background: $jawsBlue;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: subpixel-antialiased;
   color: black;
@@ -20,7 +21,7 @@ h1{
   &.hello {
     span {
       &:hover {
-        background-color: white;
+        background-color: $baseWhite;
       }
     }
   }
@@ -56,7 +57,7 @@ h1{
 
 }
 
-header.rainbow {
+footer.rainbow {
   display: block;
   position: absolute;
   bottom:0px;

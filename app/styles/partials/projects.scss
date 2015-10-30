@@ -2,8 +2,8 @@
   $projects:      t-mobile, volkswagen, fox-sports, rabobank, klm,      sensior;
   $projectColors: #B9EE84,  #B3E8F5,    #CCCCFF,    #FFB261,  #EBEBEB,  #FF99D6;
 
-  background-color: #262626;
-  color: #d1d1d1;
+  background-color: $mineShaftBlack;
+  color: $patrickBatemanWhite;
 
   .four.columns {
     padding: 2%;
@@ -63,7 +63,7 @@
 
         &:hover {
           background-color: darken( nth($projectColors, $i), 33.333% );
-          color: white;
+          color: $baseWhite;
         }
       }
     }

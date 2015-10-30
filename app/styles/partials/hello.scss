@@ -28,11 +28,10 @@
     color: rgb(189, 236, 255);
 
     letter-spacing: .2rem;
-    font-weight: 200;
+    // font-weight: 300;
     font-size: 1.3rem;
     @media (#{$bp-larger-than-tablet}) {
       letter-spacing: .3rem;
-      font-weight: 100;
       font-size: 1.7rem;
     }
   }
