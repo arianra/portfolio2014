@@ -2,3 +2,4 @@
 // TODO JS+CSS    form success & error notification styling, somekind of timeout hide
 // TODO JS+CSS    animated scroll down icon for the pages, don't show on media<tablet
 // TODO CSS       projects bg - media - change size for < desktop
+// TODO BUG		  fullpage scroll bug in updating location hash -> (window.history && window.history.replaceState)	

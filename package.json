@@ -1,5 +1,8 @@
 {
   "name": "portfolio2014",
+  "scripts": {
+    "production": "git subtree push --prefix=dist origin production"
+  },
   "devDependencies": {
     "apache-server-configs": "^2.7.1",
     "grunt": "^0.4.5",
