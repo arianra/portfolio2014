@@ -1,3 +1,7 @@
 .hidden {
   display: none;
 }
+
+@function colorToRGB($aColor){
+  @return 'rgb(' + red($aColor) + ',' +  green($aColor) + ',' + blue($aColor) +');';
+}

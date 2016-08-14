@@ -2,6 +2,14 @@
   background-color: $milkshakeGreen;
   color: $suaveGrey;
 
+  //diagonal edge
+  &:before {
+    @include diagonal-edge( "bottom right", $milkshakeGreen );
+    width: 100%;
+    height: 6rem;
+    top: -6rem;
+  }
+
   h5 {
     letter-spacing: .05rem;
     font-weight: 400;
