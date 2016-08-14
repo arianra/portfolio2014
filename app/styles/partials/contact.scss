@@ -114,6 +114,11 @@
         font-size: 1.3em;
         transition: all 0.1s ease-in;
       }
+
+      &.fa-codepen:hover {
+        //secret sauce
+        animation: rainbow-hue 1.6s cubic-bezier(.5,.1,.5,.9) infinite;
+      }
     }
   }
   .contact-icon-column {

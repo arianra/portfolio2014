@@ -51,3 +51,14 @@
     animation-play-state: running;
   }
 }
+
+
+@keyframes rainbow-hue {
+  from {
+    filter: hue-rotate(0);
+  }
+  to {
+    filter: hue-rotate(359deg);
+  }
+}
+
